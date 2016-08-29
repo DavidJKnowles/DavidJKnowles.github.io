@@ -58,7 +58,7 @@ function checkAnswer(){
 		var boroughIndex = getSelectedBorough();
 		var borough = boroughs[boroughIndex];
 		if(getValueForBorough(getSelectedBorough()) === num){
-			var msg = 'Correct - ' + borough.value + ' children are living in poverty in the borough of ' + borough.title + '.';
+			var msg = 'Correct - ' + borough.value + '  per cent of children are living in poverty in the borough of ' + borough.title + '.';
 			provideFeedback(msg, 'success');
 		}else{
 			provideFeedback('Incorrect - ' + borough.value + ' children are living in poverty in the borough of ' +
