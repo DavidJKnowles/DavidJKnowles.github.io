@@ -61,7 +61,7 @@ function checkAnswer(){
 			var msg = 'Correct - ' + borough.value + ' children are living in poverty in the borough of ' + borough.title + '.';
 			provideFeedback(msg, 'success');
 		}else{
-			provideFeedback('Incorrect - I’m afraid you will have to guess again', 'error');
+			provideFeedback('Incorrect - ' + borough.value + ' children are living in poverty in the borough of ' + borough.title + '.';
 		}
 
 		/*unhide and color the map*/
