@@ -61,7 +61,7 @@ function checkAnswer(){
 			var msg = 'Correct - ' + borough.value + '  per cent of children are living in poverty in the borough of ' + borough.title + '.';
 			provideFeedback(msg, 'success');
 		}else{
-			provideFeedback('Incorrect - ' + borough.value + ' children are living in poverty in the borough of ' +
+			provideFeedback('Incorrect - ' + borough.value + '  per cent of children are living in poverty in the borough of ' +
 			borough.title + '.', 'error');
 		}
 
