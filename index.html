@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>How well do you know London?</title>
+		<meta charset="UTF-8">
+		<link href="/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+		<link href="/css/bootstrap-theme.min.css" rel="stylesheet" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/css/bootstrap-select.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/index.css">
+	</head>
+	<body>
+	<div id="content">
+		<div id="title">
+			<h1>Child poverty in London - How much do you know?</h1>
+		</div>
+		<div id="textdiv">
+			<p>London is a vast and deeply unequal city. Glittering, unending wealth lives alongside grinding poverty. For every plush flat in Kensington there are countless families living in shared accommodation, struggling to get by.</p>
+
+			<p>Poverty is, of course, not just a blanket term. There are many different shades of meaning and nuance within the term. London has a particular problem with young adult unemployment due to low pay and high housing costs. One study suggested that, as a total, 28% of people in London live in poverty, 7 percentage points higher than the rest of England.</p>
+
+			<p>But, out of all the different shades of interpretation, child poverty is surely one of the most egregious social stains on society. Children growing up in poverty have poorer life chances than everyone else; they are less likely to go to university, more likely to drop out of school, have behavioural difficulties and be victims of abuse and neglect. They are also more physically unhealthy.</p>
+
+			<p>So now we come to you. How well do you know your boroughs in London? Can you guess the number of children in Walthamstow who live in poverty? What about Ealing? Westminster? Barnet? Lewisham?</p>
+
+			<p>Try it out  and see for yourself.</p>
+		</div>
+		<div>
+			<h3>Do you know your city?</h3>
+		</div>
+		<div id="quizdiv">
+			<div>
+				<select id="boroughselect" class="selectpicker" data-live-search="true"></select>
+			</div>
+			<div>
+				<input type="text" id="guess"/>
+			</div>
+			<div>
+				<button id="checkbtn" onclick="checkAnswer()">Check!</button>
+			</div>
+		</div>
+		<div id="feedback">
+			<p></p>	
+		</div>
+		<div id="mapdiv" class="hidden">
+			<object data="/images/london_big.svg" id="map" type="image/svg+xml"></object>
+		</div>
+	</div>
+	<script type="text/javascript" src="/js/jQuery.3.1.0.min.js"></script>
+	<script src="/js/bootstrap.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/js/bootstrap-select.min.js"></script>
+	
+	<script type="text/javascript" src="/js/functions.js"></script>
+	<script type="text/javascript">
+		/* main model */
+		var boroughs = [
+			{title:"Barking and Dagenhma", id:"LDN-0", value: 16400},
+			{title:"Barnet", id:"LDN-32", value: 13375},
+			{title:"Bexley", id:"LDN-1", value: 9650},
+			{title:"Brent", id:"LDN-14", value: 16285},
+			{title:"Bromley", id:"LDN-2", value: 10225},
+			{title:"Camden", id:"LDN-11", value: 10435},
+			{title:"City of London", id:"LDN-10", value: 85},
+			{title:"Croydon", id:"LDN-15", value: 19075},
+			{title:"Ealing", id:"LDN-16", value: 15995},
+			{title:"Enfield", id:"LDN-3", value: 21135},
+			{title:"Greenwhich", id:"LDN-30", value: 15360},
+			{title:"Hackney", id:"LDN-29", value: 17535},
+			{title:"Hamersham and Fulham", id:"LDN-20", value: 7880},
+			{title:"Haringay", id:"LDN-8", value: 15065},
+			{title:"Harrow", id:"LDN-19", value: 8395},
+			{title:"Havering", id:"LDN-4", value: 9340},
+			{title:"Hillingdon", id:"LDN-21", value: 12175},
+			{title:"Hounslow", id:"LDN-17", value: 12065},
+			{title:"Islington", id:"LDN-5", value: 12380},
+			{title:"Kensington and Chelsea", id:"LDN-6", value: 4425},
+			{title:"Kingston upon Thames", id:"LDN-31", value: 4040},
+			{title:"Lambeth", id:"LDN-7", value: 17210},
+			{title:"Lewisham", id:"LDN-9", value: 17310},
+			{title:"Merton", id:"LDN-13", value: 6890},
+			{title:"Newham", id:"LDN-12", value: 21335},
+			{title:"Redbridge", id:"LDN-27", value: 12825},
+			{title:"Richmond upon Thames", id:"LDN-28", value: 3350},
+			{title:"Southwark", id:"LDN-22", value: 17005},
+			{title:"Sutton", id:"LDN-18", value: 6295},
+			{title:"Tower Hamlets", id:"LDN-23", value: 21585},
+			{title:"Waltham Forest", id:"LDN-24", value: 15675},
+			{title:"Wandsworth", id:"LDN-25", value: 11230},
+			{title:"Westminster", id:"LDN-26", value:9675}
+		];
+
+		/* begin select building */
+		var selectElement = document.getElementById('boroughselect');
+		for(var i = 0 ; i < boroughs.length; i++){
+			var option = document.createElement('option');
+			option.appendChild(document.createTextNode(boroughs[i].title));
+			option.setAttribute('data-answer', boroughs[i].value);
+			option.setAttribute('id', boroughs[i].id.replace("LDN-",""));
+			selectElement.appendChild(option);
+		}
+		/* end select building */
+	</script>
+	</body>
+</html>

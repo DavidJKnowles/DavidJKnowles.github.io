@@ -1,0 +1,73 @@
+body{
+	width:100%;
+	height: 100%;
+	background: url('/images/bg.png') repeat;
+}
+
+option, p, input, button{
+	padding: 5px;
+	text-align: center;
+}
+
+input, button, select{
+	box-shadow: 0px 3px 8px 0px rgba(50, 50, 50, 0.76);
+}
+
+title, p, h1, h3{
+text-shadow: 0px 4px 3px rgba(216, 183, 216, 0.93);}
+
+div{
+	padding: 0px;
+}
+
+#content{
+	width:70%;
+	margin-left: 15%;
+}
+
+#content{
+	display:flex;
+	padding-top: 75px;
+	flex-direction: column;
+	text-align: center;
+}
+
+#textdiv p{
+	text-align: left;
+}
+
+#quizdiv {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+}
+
+#boroughselect, #guess{
+	width: 80%;
+	text-align: center;
+}
+
+#quizdiv div {
+	margin: 2px;
+}
+
+p.success{
+	color: green;
+}
+
+p.error{
+	color: red;
+}
+
+/*map styling*/
+.hidden{
+	visibility: hidden;
+}
+
+#checkbtn{
+	width: 200px;
+}
+
+#map{
+	width: 70%;
+}
