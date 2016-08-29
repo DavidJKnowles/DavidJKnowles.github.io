@@ -38,8 +38,10 @@ div{
 
 #quizdiv {
 	display: flex;
-	width: 100%;
 	justify-content: center;
+	flex-flow: row;
+	flex-wrap: wrap;
+	width: 100%;
 }
 
 #boroughselect, #guess{
